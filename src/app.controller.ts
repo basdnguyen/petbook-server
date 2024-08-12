@@ -5,6 +5,11 @@ import { PostService } from './post.service';
 export class AppController {
   constructor(private readonly postService: PostService) {}
 
+  @Get()
+  home() {
+    return 'Hello world';
+  }
+
   @Get('posts')
   async getPosts() {
     return this.postService.posts();
